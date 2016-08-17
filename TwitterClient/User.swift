@@ -47,6 +47,7 @@ class User: NSObject {
             _currentUser = user
             let defaults = NSUserDefaults.standardUserDefaults()
             if let user = user {
+                // QUESTION: Why do we have to serialize the whole object here? Why not just the ID?
                 let data = try! NSJSONSerialization.dataWithJSONObject(user.dictionary, options: [])
                 defaults.setObject(data, forKey: "currentUserData")
             } else {

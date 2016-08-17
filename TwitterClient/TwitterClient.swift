@@ -9,11 +9,11 @@
 import UIKit
 import BDBOAuth1Manager
 
-let baseUrl = "https://api.twitter.com"
-let consumerKey = "FqGKgaQdhcqyNbhttPCGTWHUY"
-let consumerSecret = "qttHBR50J4GLVWwIGe0POrgw9pW9nenTTgEIkX1JAJc76ofXH6"
-
 class TwitterClient: BDBOAuth1SessionManager {
+    
+    static let baseUrl = "https://api.twitter.com"
+    static let consumerKey = "FqGKgaQdhcqyNbhttPCGTWHUY"
+    static let consumerSecret = "qttHBR50J4GLVWwIGe0POrgw9pW9nenTTgEIkX1JAJc76ofXH6"
     
     static let sharedInstance = TwitterClient(
         baseURL: NSURL(string: baseUrl)!,
@@ -32,7 +32,6 @@ class TwitterClient: BDBOAuth1SessionManager {
             success: { (task: NSURLSessionDataTask, response: AnyObject?) -> Void in
                 let tweets = Tweet.tweetsWithArray(response as! [NSDictionary])
                 success(tweets)
-                
             },
             failure: { (task: NSURLSessionDataTask?, error: NSError) -> Void in
                 print(error.localizedDescription)
@@ -67,7 +66,7 @@ class TwitterClient: BDBOAuth1SessionManager {
             callbackURL: NSURL(string: "twitterclient://oauth"),
             scope: nil,
             success: { (token: BDBOAuth1Credential!) -> Void in
-                let url = NSURL(string: "\(baseUrl)/oauth/authorize?oauth_token=\(token.token)")!
+                let url = NSURL(string: "\(TwitterClient.baseUrl)/oauth/authorize?oauth_token=\(token.token)")!
                 UIApplication.sharedApplication().openURL(url)
                 
             },
@@ -82,7 +81,10 @@ class TwitterClient: BDBOAuth1SessionManager {
         deauthorize()
         User.currentUser = nil
         
-        NSNotificationCenter.defaultCenter().postNotificationName(User.userDidLogoutNotification, object: nil)
+        NSNotificationCenter.defaultCenter().postNotificationName(
+            User.userDidLogoutNotification,
+            object: nil
+        )
     }
     
     func handleOpenUrl(url: NSURL) {

@@ -10,10 +10,12 @@ import UIKit
 
 class UserProfileViewController: UIViewController {
     
+    @IBOutlet weak var userProfileHeaderView: UserProfileHeaderView!
+    
     var user: User!
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        userProfileHeaderView.user = user
         self.title = user.name
 
         // Do any additional setup after loading the view.

@@ -12,6 +12,7 @@ class User: NSObject {
     var name: String!
     var screenName: String!
     var profileImageUrl: NSURL!
+    var backgroundImageUrl: NSURL?
     var tagline: String?
 
     var dictionary: NSDictionary
@@ -22,6 +23,12 @@ class User: NSObject {
         screenName = dictionary["screen_name"] as! String
         tagline = dictionary["description"] as? String
         profileImageUrl = NSURL(string: dictionary["profile_image_url_https"] as! String)
+        
+        let imageUrl = dictionary["profile_banner_url"] as? String
+        if let imageUrl = imageUrl {
+            backgroundImageUrl = NSURL(string: imageUrl)
+        }
+        
     }
 
     static let userDidLogoutNotification = "UserDidLogout"

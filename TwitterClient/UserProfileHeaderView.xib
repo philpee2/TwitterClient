@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="UserProfileHeaderView" customModule="TwitterClient" customModuleProvider="target">
+            <connections>
+                <outlet property="backgroundImage" destination="1K2-HB-yAw" id="vja-wy-F7p"/>
+                <outlet property="contentView" destination="iN0-l3-epB" id="42B-AU-JYv"/>
+                <outlet property="nameLabel" destination="NHC-Si-QHF" id="G56-7w-W38"/>
+                <outlet property="profileImage" destination="Lxl-vM-NWY" id="HXk-6J-llI"/>
+                <outlet property="screenNameLabel" destination="5eC-eG-bYv" id="Skc-do-4t1"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1K2-HB-yAw">
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Lxl-vM-NWY">
+                    <rect key="frame" x="270" y="10" width="60" height="60"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="60" id="WHF-40-4vv"/>
+                        <constraint firstAttribute="width" constant="60" id="ljn-8v-575"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NHC-Si-QHF">
+                    <rect key="frame" x="278" y="74" width="45" height="21"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5eC-eG-bYv">
+                    <rect key="frame" x="282" y="99" width="36" height="17"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="NHC-Si-QHF" firstAttribute="top" secondItem="Lxl-vM-NWY" secondAttribute="bottom" constant="4" id="50H-LR-ux1"/>
+                <constraint firstAttribute="trailing" secondItem="1K2-HB-yAw" secondAttribute="trailing" id="B4J-XT-oQa"/>
+                <constraint firstItem="Lxl-vM-NWY" firstAttribute="centerX" secondItem="1K2-HB-yAw" secondAttribute="centerX" id="E18-vo-kc7"/>
+                <constraint firstItem="5eC-eG-bYv" firstAttribute="centerX" secondItem="Lxl-vM-NWY" secondAttribute="centerX" id="Goc-Gq-vSH"/>
+                <constraint firstItem="5eC-eG-bYv" firstAttribute="top" secondItem="NHC-Si-QHF" secondAttribute="bottom" constant="4" id="TcY-dm-nHu"/>
+                <constraint firstItem="1K2-HB-yAw" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="XXk-yI-aBd"/>
+                <constraint firstItem="Lxl-vM-NWY" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="10" id="YeW-f4-qye"/>
+                <constraint firstItem="NHC-Si-QHF" firstAttribute="centerX" secondItem="Lxl-vM-NWY" secondAttribute="centerX" id="Znh-y8-kLH"/>
+                <constraint firstItem="Lxl-vM-NWY" firstAttribute="top" secondItem="1K2-HB-yAw" secondAttribute="bottom" id="aaw-f2-YGY"/>
+                <constraint firstItem="1K2-HB-yAw" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="buL-SY-KmX"/>
+                <constraint firstAttribute="bottom" secondItem="1K2-HB-yAw" secondAttribute="bottom" id="epb-ew-Ti5"/>
+                <constraint firstItem="1K2-HB-yAw" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="jbL-3r-qEp"/>
+                <constraint firstItem="1K2-HB-yAw" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="pQZ-SL-grK"/>
+                <constraint firstAttribute="trailing" secondItem="1K2-HB-yAw" secondAttribute="trailing" id="y75-Sk-JWM"/>
+            </constraints>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="XXk-yI-aBd"/>
+                    <exclude reference="jbL-3r-qEp"/>
+                    <exclude reference="y75-Sk-JWM"/>
+                    <exclude reference="aaw-f2-YGY"/>
+                </mask>
+            </variation>
+            <point key="canvasLocation" x="423" y="384"/>
+        </view>
+    </objects>
+</document>

@@ -50,6 +50,7 @@ class TweetsViewController: UIViewController, UITableViewDataSource, UITableView
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("TweetCell") as! TweetCell
         cell.tweet = tweets[indexPath.row]
+        cell.accessoryType = .None
         return cell
     }
 
@@ -80,8 +81,7 @@ class TweetsViewController: UIViewController, UITableViewDataSource, UITableView
         }
 
         if segue.identifier == "TweetDetailsSegue" {
-            let navigationController = segue.destinationViewController as! UINavigationController
-            let tweetDetailsViewController = navigationController.topViewController as! TweetDetailsViewController
+            let tweetDetailsViewController = segue.destinationViewController as! TweetDetailsViewController
 
             let cell = sender as! UITableViewCell
             let indexPath = tableView.indexPathForCell(cell)!

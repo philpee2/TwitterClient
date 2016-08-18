@@ -15,6 +15,10 @@ class Tweet: NSObject {
     var retweetCount: Int = 0
     var favoritesCount: Int = 0
     var author: User!
+    
+    var formattedTimestamp: String {
+        return timestamp.asFormat()
+    }
 
     var age: String {
         return NSDate().offsetFrom(timestamp)
@@ -55,6 +59,18 @@ class Tweet: NSObject {
     }
 }
 
+func formatDate(dateString: String, inputFormat: String, outputFormat: String) -> String {
+    // Copied from http://stackoverflow.com/a/32104865/4318086
+    let dateFormatter = NSDateFormatter()
+    dateFormatter.dateFormat = inputFormat
+    let date = dateFormatter.dateFromString(dateString)
+    
+    dateFormatter.dateFormat = outputFormat
+    dateFormatter.timeZone = NSTimeZone(name: "UTC")
+    return dateFormatter.stringFromDate(date!)
+}
+
+
 // Copied from 
 // http://stackoverflow.com/questions/27182023/getting-the-difference-between-two-nsdates-in-months-days-hours-minutes-seconds
 extension NSDate {
@@ -88,5 +104,13 @@ extension NSDate {
         if minutesFrom(date) > 0 { return "\(minutesFrom(date))m" }
         if secondsFrom(date) > 0 { return "\(secondsFrom(date))s" }
         return ""
+    }
+    
+    func asFormat(outputFormat: String = "MM/DD/YY, H:mm a") -> String {
+        let dateFormatter = NSDateFormatter()
+        
+        dateFormatter.dateFormat = outputFormat
+        dateFormatter.timeZone = NSTimeZone(name: "UTC")
+        return dateFormatter.stringFromDate(self)
     }
 }

@@ -19,7 +19,7 @@ class TweetCell: UITableViewCell {
     var tweet: Tweet! {
         didSet {
             nameLabel.text = tweet.author.name
-            screenNameLabel.text = tweet.author.screenName
+            screenNameLabel.text = "@\(tweet.author.screenName)"
             ageLabel.text = tweet.age
             tweetTextLabel.text = tweet.text
             profileImageView.setImageWithURL(tweet.author.profileImageUrl)

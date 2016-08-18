@@ -18,7 +18,9 @@ class TweetsViewController: UIViewController, UITableViewDataSource, UITableView
         
         tableView.delegate = self
         tableView.dataSource = self
-        
+        tableView.estimatedRowHeight = 100
+        tableView.rowHeight = UITableViewAutomaticDimension
+
         Tweet.homeTimeline({ (tweets: [Tweet]) in
             self.tweets = tweets
             self.tableView.reloadData()

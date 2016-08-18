@@ -9,18 +9,18 @@
 import UIKit
 
 class TweetDetailsViewController: UIViewController, ComposeViewControllerDelegate {
-    
+
     var tweet: Tweet!
-    
+
     @IBOutlet weak var profileImageView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var screenNameLabel: UILabel!
     @IBOutlet weak var tweetTextLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         nameLabel.text = tweet.author.name
         screenNameLabel.text = "@\(tweet.author.screenName)"
         dateLabel.text = tweet.formattedTimestamp
@@ -34,12 +34,12 @@ class TweetDetailsViewController: UIViewController, ComposeViewControllerDelegat
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
+
     func composeViewController(composeViewController: ComposeViewController, didSubmitText text: String) {
         let tweet = Tweet(text: text)
         tweet.save()
     }
-    
+
 
     // MARK: - Navigation
 
@@ -47,13 +47,16 @@ class TweetDetailsViewController: UIViewController, ComposeViewControllerDelegat
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
-        
+
         switch segue.identifier! {
         case "ReplySegue":
             let navigationController = segue.destinationViewController as! UINavigationController
             let composeViewController = navigationController.topViewController as! ComposeViewController
             composeViewController.starterText = "@\(tweet.author.screenName) "
             composeViewController.delegate = self
+        case "UserProfileSegue":
+            let userProfileViewController = segue.destinationViewController as! UserProfileViewController
+            userProfileViewController.user = tweet.author
         default:
             return
         }

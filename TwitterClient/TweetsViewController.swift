@@ -74,7 +74,7 @@ class TweetsViewController: UIViewController, UITableViewDataSource, UITableView
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        
+
         switch segue.identifier! {
         case "ComposeSegue":
             let navigationController = segue.destinationViewController as! UINavigationController
@@ -85,6 +85,12 @@ class TweetsViewController: UIViewController, UITableViewDataSource, UITableView
             let cell = sender as! UITableViewCell
             let indexPath = tableView.indexPathForCell(cell)!
             tweetDetailsViewController.tweet = tweets[indexPath.row]
+        case "UserProfileSegue":
+            let userProfileViewController = segue.destinationViewController as! UserProfileViewController
+            // This is pretty gross
+            let cell = sender?.view.superview!.superview as! UITableViewCell
+            let indexPath = tableView.indexPathForCell(cell)!
+            userProfileViewController.user = tweets[indexPath.row].author
         default:
             return
         }

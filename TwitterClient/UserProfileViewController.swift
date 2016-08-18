@@ -9,9 +9,12 @@
 import UIKit
 
 class UserProfileViewController: UIViewController {
-
+    
+    var user: User!
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.title = user.name
 
         // Do any additional setup after loading the view.
     }

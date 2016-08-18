@@ -37,7 +37,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="162" y="341"/>
+            <point key="canvasLocation" x="-350" y="349"/>
         </scene>
         <!--Home-->
         <scene sceneID="VDc-na-7en">
@@ -62,12 +62,16 @@
                                             <rect key="frame" x="0.0" y="0.0" width="287" height="100"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xeq-jg-NVz">
+                                                <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xeq-jg-NVz">
                                                     <rect key="frame" x="8" y="8" width="40" height="40"/>
+                                                    <gestureRecognizers/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="40" id="7Rl-2X-qZR"/>
                                                         <constraint firstAttribute="height" constant="40" id="8qd-Ia-6zb"/>
                                                     </constraints>
+                                                    <connections>
+                                                        <outletCollection property="gestureRecognizers" destination="Bo4-1h-PEd" appends="YES" id="UmV-1P-c9H"/>
+                                                    </connections>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hik-Kr-qEj">
                                                     <rect key="frame" x="52" y="8" width="38" height="16"/>
@@ -147,8 +151,13 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cvv-1L-JXS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="Bo4-1h-PEd">
+                    <connections>
+                        <segue destination="0LI-Ub-36a" kind="push" identifier="UserProfileSegue" id="uZv-QZ-H0G"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1008" y="341"/>
+            <point key="canvasLocation" x="464" y="349"/>
         </scene>
         <!--Compose View Controller-->
         <scene sceneID="r4A-CA-3c2">
@@ -196,7 +205,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YPt-Q9-Oce" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1871" y="638"/>
+            <point key="canvasLocation" x="1487" y="1066"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="VvB-3s-w71">
@@ -217,12 +226,12 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MTe-b1-7sn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="613" y="341"/>
+            <point key="canvasLocation" x="61" y="349"/>
         </scene>
         <!--User Profile View Controller-->
         <scene sceneID="KzQ-7j-MF2">
             <objects>
-                <viewController id="0LI-Ub-36a" customClass="UserProfileViewController" customModule="TwitterClient" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="UserProfileViewController" id="0LI-Ub-36a" customClass="UserProfileViewController" customModule="TwitterClient" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="eqa-1S-d2t"/>
                         <viewControllerLayoutGuide type="bottom" id="Fqf-bj-4Xf"/>
@@ -232,10 +241,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" id="syN-Ca-UwS"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GBM-4u-n9o" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1014" y="-442"/>
+            <point key="canvasLocation" x="1051" y="-485"/>
         </scene>
         <!--Tweet-->
         <scene sceneID="tPF-mj-InR">
@@ -249,12 +259,16 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="l2G-Vo-NtY">
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="l2G-Vo-NtY">
                                 <rect key="frame" x="8" y="8" width="40" height="40"/>
+                                <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="Fhx-fQ-Knk"/>
                                     <constraint firstAttribute="width" constant="40" id="JvP-vv-vhq"/>
                                 </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="g4x-zP-wEG" appends="YES" id="54g-uo-Gz3"/>
+                                </connections>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9uZ-dv-fM0">
                                 <rect key="frame" x="52" y="8" width="38" height="16"/>
@@ -312,8 +326,13 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gfl-mU-5NW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="g4x-zP-wEG">
+                    <connections>
+                        <segue destination="0LI-Ub-36a" kind="push" identifier="UserProfileSegue" id="clE-m7-bZt"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1483" y="-29"/>
+            <point key="canvasLocation" x="1051" y="349"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ILP-US-ido">
@@ -331,10 +350,11 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="moU-qW-yke" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1483" y="638"/>
+            <point key="canvasLocation" x="1051" y="1061"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="rfe-cd-hKy"/>
+        <segue reference="clE-m7-bZt"/>
     </inferredMetricsTieBreakers>
 </document>

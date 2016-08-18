@@ -55,11 +55,11 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TweetCell" rowHeight="100" id="E5f-Gj-5c2" customClass="TweetCell" customModule="TwitterClient" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="TweetCell" rowHeight="100" id="E5f-Gj-5c2" customClass="TweetCell" customModule="TwitterClient" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="320" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="E5f-Gj-5c2" id="phz-ip-hDF">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="287" height="100"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xeq-jg-NVz">
@@ -81,13 +81,13 @@
                                                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4h" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zGP-ks-DPk">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="4h" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zGP-ks-DPk">
                                                     <rect key="frame" x="296" y="8" width="16" height="16"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6EG-F4-p7z">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6EG-F4-p7z">
                                                     <rect key="frame" x="52" y="28" width="260" height="16"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -116,6 +116,7 @@
                                             <outlet property="profileImageView" destination="xeq-jg-NVz" id="Tgj-FN-kh7"/>
                                             <outlet property="screenNameLabel" destination="dpF-fB-dCB" id="yO5-xP-fpW"/>
                                             <outlet property="tweetTextLabel" destination="6EG-F4-p7z" id="Whi-gh-9ee"/>
+                                            <segue destination="kf8-0m-txr" kind="push" id="i0I-Pu-IVp"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -137,7 +138,7 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="New" id="MJ9-2I-WVs">
                             <connections>
-                                <segue destination="d8X-J4-1Q9" kind="modal" id="j4s-qq-czy"/>
+                                <segue destination="d8X-J4-1Q9" kind="modal" identifier="ComposeSegue" id="j4s-qq-czy"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -195,7 +196,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YPt-Q9-Oce" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1925" y="334"/>
+            <point key="canvasLocation" x="1871" y="638"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="VvB-3s-w71">
@@ -218,6 +219,25 @@
             </objects>
             <point key="canvasLocation" x="613" y="341"/>
         </scene>
+        <!--Tweet-->
+        <scene sceneID="tPF-mj-InR">
+            <objects>
+                <viewController id="kf8-0m-txr" customClass="TweetDetailsViewController" customModule="TwitterClient" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="2aZ-NO-lnX"/>
+                        <viewControllerLayoutGuide type="bottom" id="A5h-GC-e0d"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="uTu-1G-txz">
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Tweet" id="BVk-Zg-nuU"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gfl-mU-5NW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1483" y="-29"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="ILP-US-ido">
             <objects>
@@ -234,7 +254,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="moU-qW-yke" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1393" y="334"/>
+            <point key="canvasLocation" x="1483" y="638"/>
         </scene>
     </scenes>
 </document>

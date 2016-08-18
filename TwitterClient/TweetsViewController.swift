@@ -52,7 +52,7 @@ class TweetsViewController: UIViewController, UITableViewDataSource, UITableView
         cell.tweet = tweets[indexPath.row]
         return cell
     }
-    
+
     func composeViewController(composeViewController: ComposeViewController, didSubmitText text: String) {
         print(text)
     }
@@ -72,9 +72,20 @@ class TweetsViewController: UIViewController, UITableViewDataSource, UITableView
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        let navigationController = segue.destinationViewController as! UINavigationController
-        let composeViewController = navigationController.topViewController as! ComposeViewController
-        composeViewController.delegate = self
+        if segue.identifier == "ComposeSegue" {
+            let navigationController = segue.destinationViewController as! UINavigationController
+            let composeViewController = navigationController.topViewController as! ComposeViewController
+            composeViewController.delegate = self
+        }
+
+        if segue.identifier == "TweetDetailsSegue" {
+            let navigationController = segue.destinationViewController as! UINavigationController
+            let tweetDetailsViewController = navigationController.topViewController as! TweetDetailsViewController
+
+            let cell = sender as! UITableViewCell
+            let indexPath = tableView.indexPathForCell(cell)!
+            tweetDetailsViewController.tweet = tweets[indexPath.row]
+        }
     }
 
 }

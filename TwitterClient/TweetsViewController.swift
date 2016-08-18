@@ -9,7 +9,7 @@
 import UIKit
 import MBProgressHUD
 
-class TweetsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class TweetsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, ComposeViewControllerDelegate {
 
     @IBOutlet weak var tableView: UITableView!
     var tweets: [Tweet]!
@@ -52,6 +52,10 @@ class TweetsViewController: UIViewController, UITableViewDataSource, UITableView
         cell.tweet = tweets[indexPath.row]
         return cell
     }
+    
+    func composeViewController(composeViewController: ComposeViewController, didSubmitText text: String) {
+        print(text)
+    }
 
 
     override func didReceiveMemoryWarning() {
@@ -63,14 +67,14 @@ class TweetsViewController: UIViewController, UITableViewDataSource, UITableView
     @IBAction func onLogoutButton(sender: AnyObject) {
         TwitterClient.sharedInstance.logout()
     }
-    /*
+
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        let navigationController = segue.destinationViewController as! UINavigationController
+        let composeViewController = navigationController.topViewController as! ComposeViewController
+        composeViewController.delegate = self
     }
-    */
 
 }

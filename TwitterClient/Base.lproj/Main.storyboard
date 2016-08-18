@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
     </dependencies>
     <scenes>
         <!--Login View Controller-->
@@ -58,7 +59,7 @@
                                         <rect key="frame" x="0.0" y="28" width="320" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="E5f-Gj-5c2" id="phz-ip-hDF">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="99.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xeq-jg-NVz">
@@ -134,6 +135,11 @@
                                 <action selector="onLogoutButton:" destination="Pw9-Ab-8zh" id="I76-gz-ay6"/>
                             </connections>
                         </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="New" id="MJ9-2I-WVs">
+                            <connections>
+                                <segue destination="d8X-J4-1Q9" kind="modal" id="j4s-qq-czy"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="X2h-kq-3Hz" id="AYs-UY-JFm"/>
@@ -141,7 +147,55 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cvv-1L-JXS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1022" y="471"/>
+            <point key="canvasLocation" x="1008" y="341"/>
+        </scene>
+        <!--Compose View Controller-->
+        <scene sceneID="r4A-CA-3c2">
+            <objects>
+                <viewController id="efe-ex-V88" customClass="ComposeViewController" customModule="TwitterClient" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="iXB-ai-18H"/>
+                        <viewControllerLayoutGuide type="bottom" id="Rhc-Cm-z0v"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="WSb-Di-KK6">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LbS-C3-fmD">
+                                <rect key="frame" x="20" y="72" width="280" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="tweetFieldChanged:" destination="efe-ex-V88" eventType="editingChanged" id="iaE-sj-sY5"/>
+                                </connections>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="YFt-gJ-mJs">
+                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="2Ws-Ev-l0c">
+                            <connections>
+                                <action selector="onCancel:" destination="efe-ex-V88" id="UqW-JO-j1M"/>
+                            </connections>
+                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem title="Submit" id="gGz-sN-JvP">
+                                <connections>
+                                    <action selector="onSubmit:" destination="efe-ex-V88" id="51P-Qi-JfB"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="140" id="Wq6-Ei-EUz"/>
+                        </rightBarButtonItems>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="remainingCharacters" destination="Wq6-Ei-EUz" id="KiP-Rp-wnW"/>
+                        <outlet property="submitButton" destination="gGz-sN-JvP" id="Pb4-Qq-vDY"/>
+                        <outlet property="tweetField" destination="LbS-C3-fmD" id="x0W-ds-cZw"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YPt-Q9-Oce" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1925" y="334"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="VvB-3s-w71">
@@ -163,6 +217,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MTe-b1-7sn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="613" y="341"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="ILP-US-ido">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="d8X-J4-1Q9" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="QK1-Uf-XFp">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="efe-ex-V88" kind="relationship" relationship="rootViewController" id="MiC-rK-dgH"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="moU-qW-yke" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1393" y="334"/>
         </scene>
     </scenes>
 </document>

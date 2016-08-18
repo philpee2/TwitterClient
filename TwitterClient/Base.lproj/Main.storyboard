@@ -278,7 +278,13 @@
                             <constraint firstItem="l2G-Vo-NtY" firstAttribute="top" secondItem="2aZ-NO-lnX" secondAttribute="bottom" constant="8" id="t91-dK-7Os"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Tweet" id="BVk-Zg-nuU"/>
+                    <navigationItem key="navigationItem" title="Tweet" id="BVk-Zg-nuU">
+                        <barButtonItem key="rightBarButtonItem" title="Reply" id="Ith-QC-Uri">
+                            <connections>
+                                <segue destination="d8X-J4-1Q9" kind="modal" identifier="ReplySegue" id="rfe-cd-hKy"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="dateLabel" destination="9MS-0p-rcM" id="3hd-D2-AnS"/>
                         <outlet property="nameLabel" destination="9uZ-dv-fM0" id="g9N-Wb-pCT"/>
@@ -310,4 +316,7 @@
             <point key="canvasLocation" x="1483" y="638"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="rfe-cd-hKy"/>
+    </inferredMetricsTieBreakers>
 </document>

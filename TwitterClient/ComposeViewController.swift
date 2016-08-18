@@ -13,19 +13,24 @@
 import UIKit
 
 class ComposeViewController: UIViewController {
-    
+
     var delegate: ComposeViewControllerDelegate?
-    
+    var starterText: String?
+
     @IBOutlet weak var tweetField: UITextField!
     @IBOutlet weak var submitButton: UIBarButtonItem!
     // TODO: Probably shouldn't be a UIBarButtonItem
     @IBOutlet weak var remainingCharacters: UIBarButtonItem!
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        if let starterText = starterText {
+            tweetField.text = starterText
+        }
+
+        updateCharacters()
     }
-    
+
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         tweetField.becomeFirstResponder()
@@ -35,7 +40,18 @@ class ComposeViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
+
+    private func updateCharacters() {
+        let characterCount = tweetField.text?.characters.count ?? 0
+        remainingCharacters.title = "\(140 - characterCount)"
+
+        if characterCount > 140 {
+            submitButton.enabled = false
+        } else {
+            submitButton.enabled = true
+        }
+    }
+
 
     /*
     // MARK: - Navigation
@@ -50,7 +66,7 @@ class ComposeViewController: UIViewController {
     @IBAction func onCancel(sender: AnyObject) {
         dismissViewControllerAnimated(true, completion: nil)
     }
-    
+
     @IBAction func onSubmit(sender: AnyObject) {
         dismissViewControllerAnimated(true, completion: nil)
         let text = tweetField.text ?? ""
@@ -58,15 +74,8 @@ class ComposeViewController: UIViewController {
             delegate?.composeViewController?(self, didSubmitText: text)
         }
     }
-    
+
     @IBAction func tweetFieldChanged(sender: AnyObject) {
-        let characterCount = tweetField.text?.characters.count ?? 0
-        remainingCharacters.title = "\(140 - characterCount)"
-        
-        if characterCount > 140 {
-            submitButton.enabled = false
-        } else {
-            submitButton.enabled = true
-        }
+        updateCharacters()
     }
 }

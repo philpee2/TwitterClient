@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TweetDetailsViewController: UIViewController {
+class TweetDetailsViewController: UIViewController, ComposeViewControllerDelegate {
     
     var tweet: Tweet!
     
@@ -35,15 +35,28 @@ class TweetDetailsViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    func composeViewController(composeViewController: ComposeViewController, didSubmitText text: String) {
+        let tweet = Tweet(text: text)
+        tweet.save()
+    }
+    
 
-    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        
+        switch segue.identifier! {
+        case "ReplySegue":
+            let navigationController = segue.destinationViewController as! UINavigationController
+            let composeViewController = navigationController.topViewController as! ComposeViewController
+            composeViewController.starterText = "@\(tweet.author.screenName) "
+            composeViewController.delegate = self
+        default:
+            return
+        }
     }
-    */
 
 }

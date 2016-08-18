@@ -19,7 +19,7 @@
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vTG-w3-TD6">
                                 <rect key="frame" x="88" y="364" width="147" height="87"/>
-                                <color key="backgroundColor" red="0.38778549632551074" green="0.79007645958385975" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.0" green="0.67450980390000004" blue="0.92941176469999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="Log in with Twitter">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -47,15 +47,15 @@
                         <viewControllerLayoutGuide type="bottom" id="k8I-Jr-gsr"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="1QU-yv-5Ta">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="X2h-kq-3Hz">
-                                <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TweetCell" rowHeight="100" id="E5f-Gj-5c2" customClass="TweetCell" customModule="TwitterClient" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="92" width="320" height="100"/>
+                                        <rect key="frame" x="0.0" y="28" width="320" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="E5f-Gj-5c2" id="phz-ip-hDF">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="99.5"/>
@@ -98,7 +98,7 @@
                                                 <constraint firstItem="zGP-ks-DPk" firstAttribute="bottom" secondItem="hik-Kr-qEj" secondAttribute="bottom" id="Fpv-rE-2vP"/>
                                                 <constraint firstItem="xeq-jg-NVz" firstAttribute="top" secondItem="phz-ip-hDF" secondAttribute="top" constant="8" id="MB9-QR-vIY"/>
                                                 <constraint firstItem="hik-Kr-qEj" firstAttribute="leading" secondItem="xeq-jg-NVz" secondAttribute="trailing" constant="4" id="R1x-e1-tVL"/>
-                                                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="6EG-F4-p7z" secondAttribute="bottom" constant="8" id="Uqr-kc-2ig"/>
+                                                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="6EG-F4-p7z" secondAttribute="bottom" constant="12" id="Uqr-kc-2ig"/>
                                                 <constraint firstItem="xeq-jg-NVz" firstAttribute="leading" secondItem="phz-ip-hDF" secondAttribute="leading" constant="8" id="aCa-dH-drQ"/>
                                                 <constraint firstItem="6EG-F4-p7z" firstAttribute="leading" secondItem="hik-Kr-qEj" secondAttribute="leading" id="gil-fX-OCu"/>
                                                 <constraint firstItem="dpF-fB-dCB" firstAttribute="bottom" secondItem="hik-Kr-qEj" secondAttribute="bottom" id="idw-yu-MBK"/>
@@ -124,8 +124,8 @@
                         <constraints>
                             <constraint firstItem="k8I-Jr-gsr" firstAttribute="top" secondItem="X2h-kq-3Hz" secondAttribute="bottom" id="3Eh-uC-K5c"/>
                             <constraint firstAttribute="trailing" secondItem="X2h-kq-3Hz" secondAttribute="trailing" id="AIC-Wg-Fjh"/>
+                            <constraint firstItem="X2h-kq-3Hz" firstAttribute="top" secondItem="1QU-yv-5Ta" secondAttribute="top" id="ffg-RZ-ydQ"/>
                             <constraint firstItem="X2h-kq-3Hz" firstAttribute="leading" secondItem="1QU-yv-5Ta" secondAttribute="leading" id="gg7-cf-ipO"/>
-                            <constraint firstItem="X2h-kq-3Hz" firstAttribute="top" secondItem="e5M-d6-VBL" secondAttribute="bottom" id="thj-sY-Lan"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Home" id="XyA-wr-Fzz">
@@ -148,9 +148,12 @@
             <objects>
                 <navigationController storyboardIdentifier="TweetsNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="4ls-5c-N7g" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="R9A-VV-JvZ">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="R9A-VV-JvZ">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" red="0.0" green="0.67450980392156867" blue="0.92941176470588238" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="barTintColor" red="0.0" green="0.67450980390000004" blue="0.92941176469999998" alpha="1" colorSpace="calibratedRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>

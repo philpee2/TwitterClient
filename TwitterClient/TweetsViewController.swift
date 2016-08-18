@@ -54,7 +54,8 @@ class TweetsViewController: UIViewController, UITableViewDataSource, UITableView
     }
 
     func composeViewController(composeViewController: ComposeViewController, didSubmitText text: String) {
-        print(text)
+        let tweet = Tweet(text: text)
+        tweet.save()
     }
 
 

@@ -32,6 +32,19 @@ class Tweet: NSObject {
         formatter.dateFormat = "EEE MMM d HH:mm:ss Z y"
         timestamp = formatter.dateFromString(timestampString)
     }
+    
+    // Convenience constructor for when a tweet is composed by the current user
+    init(text: String) {
+        self.text = text
+        retweetCount = 0
+        favoritesCount = 0
+        author = User.currentUser
+        timestamp = NSDate()
+    }
+    
+    func save() {
+        TwitterClient.sharedInstance.postTweet(self)
+    }
 
     class func tweetsWithArray(dictionaries: [NSDictionary]) -> [Tweet] {
         return dictionaries.map { Tweet(dictionary: $0) }

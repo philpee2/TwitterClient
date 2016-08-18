@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		048421CE1D654FE00096BB0B /* TweetCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048421CD1D654FE00096BB0B /* TweetCell.swift */; };
 		0489B0531D63F56A000F59AF /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0489B0521D63F56A000F59AF /* LoginViewController.swift */; };
 		0489B0571D64089F000F59AF /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0489B0561D64089F000F59AF /* User.swift */; };
 		0489B0591D6408AB000F59AF /* Tweet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0489B0581D6408AB000F59AF /* Tweet.swift */; };
@@ -21,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		048421CD1D654FE00096BB0B /* TweetCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweetCell.swift; sourceTree = "<group>"; };
 		0489B0521D63F56A000F59AF /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		0489B0561D64089F000F59AF /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		0489B0581D6408AB000F59AF /* Tweet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tweet.swift; sourceTree = "<group>"; };
@@ -79,6 +81,7 @@
 		0489B05A1D641313000F59AF /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				048421CD1D654FE00096BB0B /* TweetCell.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -260,6 +263,7 @@
 				0489B0571D64089F000F59AF /* User.swift in Sources */,
 				0489B0591D6408AB000F59AF /* Tweet.swift in Sources */,
 				0489B0531D63F56A000F59AF /* LoginViewController.swift in Sources */,
+				048421CE1D654FE00096BB0B /* TweetCell.swift in Sources */,
 				04A6AF881D63F4770048DC47 /* ViewController.swift in Sources */,
 				0489B05E1D641D32000F59AF /* TweetsViewController.swift in Sources */,
 				0489B05C1D64133E000F59AF /* TwitterClient.swift in Sources */,

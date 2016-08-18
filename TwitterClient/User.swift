@@ -11,7 +11,7 @@ import UIKit
 class User: NSObject {
     var name: String!
     var screenName: String!
-    var profileUrl: NSURL!
+    var profileImageUrl: NSURL!
     var tagline: String?
 
     var dictionary: NSDictionary
@@ -21,7 +21,7 @@ class User: NSObject {
         name = dictionary["name"] as? String
         screenName = dictionary["screen_name"] as! String
         tagline = dictionary["description"] as? String
-        profileUrl = NSURL(string: dictionary["profile_image_url_https"] as! String)
+        profileImageUrl = NSURL(string: dictionary["profile_image_url_https"] as! String)
     }
 
     static let userDidLogoutNotification = "UserDidLogout"
@@ -47,7 +47,6 @@ class User: NSObject {
             _currentUser = user
             let defaults = NSUserDefaults.standardUserDefaults()
             if let user = user {
-                // QUESTION: Why do we have to serialize the whole object here? Why not just the ID?
                 let data = try! NSJSONSerialization.dataWithJSONObject(user.dictionary, options: [])
                 defaults.setObject(data, forKey: "currentUserData")
             } else {

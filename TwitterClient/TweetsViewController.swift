@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MBProgressHUD
 
 class TweetsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
@@ -15,34 +16,44 @@ class TweetsViewController: UIViewController, UITableViewDataSource, UITableView
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         tableView.delegate = self
         tableView.dataSource = self
         tableView.estimatedRowHeight = 100
         tableView.rowHeight = UITableViewAutomaticDimension
 
-        Tweet.homeTimeline({ (tweets: [Tweet]) in
-            self.tweets = tweets
-            self.tableView.reloadData()
-        })
+        let refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action: #selector(fetchData(_:)), forControlEvents: UIControlEvents.ValueChanged)
+        tableView.insertSubview(refreshControl, atIndex: 0)
+        fetchData(refreshControl)
 
         // Do any additional setup after loading the view.
 
     }
-    
+
+    @objc private func fetchData(refreshControl: UIRefreshControl) {
+        MBProgressHUD.showHUDAddedTo(self.view, animated: true)
+        Tweet.homeTimeline({ (tweets: [Tweet]) in
+            self.tweets = tweets
+            self.tableView.reloadData()
+            refreshControl.endRefreshing()
+            MBProgressHUD.hideHUDForView(self.view, animated: true)
+        })
+    }
+
     // MARK: - Table view
-    
+
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return tweets?.count ?? 0
     }
-    
+
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("TweetCell") as! TweetCell
         cell.tweet = tweets[indexPath.row]
         return cell
     }
-    
-    
+
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

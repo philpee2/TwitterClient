@@ -359,7 +359,7 @@
                         <viewControllerLayoutGuide type="bottom" id="Fqf-bj-4Xf"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="FGL-qK-XEx">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="U6e-p5-GEs" customClass="UserProfileHeaderView" customModule="TwitterClient" customModuleProvider="target">
@@ -507,9 +507,10 @@
                 <navigationController storyboardIdentifier="UserProfileNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="dwk-yn-kgX" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="UFn-1t-ycW"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="efc-AC-IBn">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="efc-AC-IBn">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.0" green="0.67450980390000004" blue="0.92941176469999998" alpha="1" colorSpace="calibratedRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -523,6 +524,6 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="rfe-cd-hKy"/>
-        <segue reference="KGt-bQ-TDF"/>
+        <segue reference="Gwr-kt-qSL"/>
     </inferredMetricsTieBreakers>
 </document>

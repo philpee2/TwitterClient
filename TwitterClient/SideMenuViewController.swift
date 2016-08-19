@@ -16,12 +16,6 @@ class SideMenuViewController: UIViewController {
     
     var originalLeftMargin: CGFloat!
     
-    var isOpen: Bool! {
-        didSet {
-            isOpen == false ? close() : open()
-        }
-    }
-    
     var optionsViewController: UIViewController! {
         didSet {
             view.layoutIfNeeded()
@@ -59,51 +53,6 @@ class SideMenuViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-    }
-
-    private var activeViewController: UIViewController? {
-        didSet {
-            removeInactiveViewController(oldValue)
-            updateActiveViewController()
-            close()
-        }
-    }
-
-    private func close() {
-        UIView.animateWithDuration(0.2) {
-            self.contentView.frame.origin.x = 0
-        }
-    }
-
-    private func open() {
-        UIView.animateWithDuration(0.2) {
-            self.contentView.frame.origin.x = 200
-        }
-    }
-
-    private func removeInactiveViewController(inactiveViewController: UIViewController?) {
-        if let inActiveVC = inactiveViewController {
-            // call before removing child view controller's view from hierarchy
-            inActiveVC.willMoveToParentViewController(nil)
-
-            inActiveVC.view.removeFromSuperview()
-
-            // call after removing child view controller's view from hierarchy
-            inActiveVC.removeFromParentViewController()
-        }
-    }
-
-    private func updateActiveViewController() {
-        if let activeVC = activeViewController {
-            // call before adding child view controller's view as subview
-            addChildViewController(activeVC)
-
-            activeVC.view.frame = contentView.bounds
-            contentView.addSubview(activeVC.view)
-
-            // call before adding child view controller's view as subview
-            activeVC.didMoveToParentViewController(self)
-        }
     }
 
     @IBAction func onPanGesture(sender: UIPanGestureRecognizer) {

@@ -18,15 +18,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let sideMenuViewController = storyboard.instantiateViewControllerWithIdentifier("SideMenuViewController") as! SideMenuViewController
+        let sideMenuOptionsController = storyboard.instantiateViewControllerWithIdentifier("SideMenuOptionsViewController") as! SideMenuOptionsViewController
+        
+        sideMenuOptionsController.sideMenuViewController = sideMenuViewController
+        sideMenuViewController.optionsViewController = sideMenuOptionsController
+        
         if User.currentUser != nil {
-            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let sideMenuViewController = storyboard.instantiateViewControllerWithIdentifier("SideMenuViewController") as! SideMenuViewController
             window?.rootViewController = sideMenuViewController
-            
-            let sideMenuOptionsController = storyboard.instantiateViewControllerWithIdentifier("SideMenuOptionsViewController") as! SideMenuOptionsViewController
-            
-            sideMenuOptionsController.sideMenuViewController = sideMenuViewController
-            sideMenuViewController.optionsViewController = sideMenuOptionsController
         }
         
         NSNotificationCenter.defaultCenter().addObserverForName(

@@ -32,12 +32,12 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <connections>
-                        <segue destination="4ls-5c-N7g" kind="modal" identifier="loginSegue" id="378-7o-fZn"/>
+                        <segue destination="fZ0-9S-7Z5" kind="modal" identifier="loginSegue" id="FNZ-0r-vtp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-350" y="349"/>
+            <point key="canvasLocation" x="-445" y="364"/>
         </scene>
         <!--Side Menu Options View Controller-->
         <scene sceneID="ik0-wi-n4i">
@@ -77,7 +77,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tJR-sL-ue5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-442" y="-339"/>
+            <point key="canvasLocation" x="-454" y="-400"/>
         </scene>
         <!--Side Menu View Controller-->
         <scene sceneID="QQ1-PF-W3p">

@@ -11,12 +11,23 @@ import UIKit
 class UserProfileViewController: UIViewController {
     
     @IBOutlet weak var userProfileHeaderView: UserProfileHeaderView!
+    @IBOutlet weak var tweetsLabel: UILabel!
+    @IBOutlet weak var followingLabel: UILabel!
+    @IBOutlet weak var followersLabel: UILabel!
     
     var user: User!
     override func viewDidLoad() {
         super.viewDidLoad()
         userProfileHeaderView.user = user
         self.title = user.name
+        tweetsLabel.text = "\(user.tweetsCount)"
+        followersLabel.text = "\(user.followersCount)"
+        followingLabel.text = "\(user.followingsCount)"
+        
+        tweetsLabel.sizeToFit()
+        followingLabel.sizeToFit()
+        followingLabel.sizeToFit()
+        
 
         // Do any additional setup after loading the view.
     }

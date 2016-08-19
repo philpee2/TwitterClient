@@ -17,6 +17,8 @@ class TweetDetailsViewController: UIViewController, ComposeViewControllerDelegat
     @IBOutlet weak var screenNameLabel: UILabel!
     @IBOutlet weak var tweetTextLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var retweetsLabel: UILabel!
+    @IBOutlet weak var favoritesLabel: UILabel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,6 +28,8 @@ class TweetDetailsViewController: UIViewController, ComposeViewControllerDelegat
         dateLabel.text = tweet.formattedTimestamp
         tweetTextLabel.text = tweet.text
         profileImageView.setImageWithURL(tweet.author.profileImageUrl)
+        retweetsLabel.text = "\(tweet.retweetCount) RETWEETS"
+        favoritesLabel.text = "\(tweet.favoritesCount) FAVORITES"
 
         // Do any additional setup after loading the view.
     }

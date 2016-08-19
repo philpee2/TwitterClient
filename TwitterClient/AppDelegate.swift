@@ -20,8 +20,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         if User.currentUser != nil {
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let viewController = storyboard.instantiateViewControllerWithIdentifier("TweetsNavigationController")
-            window?.rootViewController = viewController
+            let tweetsViewController = storyboard.instantiateViewControllerWithIdentifier("TweetsNavigationController") as! UINavigationController
+            let profileViewController = storyboard.instantiateViewControllerWithIdentifier("UserProfileViewController") as! UserProfileViewController
+            let containerVC = ContainerViewController(nibName: "ContainerViewController", bundle: nil)
+            containerVC.homeViewController = tweetsViewController
+            containerVC.profileViewController = profileViewController
+            
+            window = UIWindow(frame: UIScreen.mainScreen().bounds)
+            window?.rootViewController = containerVC
+            window?.makeKeyAndVisible()
         }
         
         NSNotificationCenter.defaultCenter().addObserverForName(

@@ -18,7 +18,9 @@ class UserProfileHeaderView: UIView {
 
     var user: User! {
         didSet {
-            backgroundImage.setImageWithURL(user.backgroundImageUrl!)
+            if let backgroundImageUrl = user.backgroundImageUrl {
+                backgroundImage.setImageWithURL(backgroundImageUrl)
+            }
             profileImage.setImageWithURL(user.profileImageUrl)
             nameLabel.text = user.name
             screenNameLabel.text = user.screenName

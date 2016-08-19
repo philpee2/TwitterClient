@@ -17,14 +17,14 @@ class TweetsViewController: UIViewController, UITableViewDataSource, UITableView
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        tableView.delegate = self
-        tableView.dataSource = self
-        tableView.estimatedRowHeight = 100
-        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView?.delegate = self
+        tableView?.dataSource = self
+        tableView?.estimatedRowHeight = 100
+        tableView?.rowHeight = UITableViewAutomaticDimension
 
         let refreshControl = UIRefreshControl()
         refreshControl.addTarget(self, action: #selector(fetchData(_:)), forControlEvents: UIControlEvents.ValueChanged)
-        tableView.insertSubview(refreshControl, atIndex: 0)
+        tableView?.insertSubview(refreshControl, atIndex: 0)
         fetchData(refreshControl)
 
         // Do any additional setup after loading the view.
@@ -35,7 +35,7 @@ class TweetsViewController: UIViewController, UITableViewDataSource, UITableView
         MBProgressHUD.showHUDAddedTo(self.view, animated: true)
         Tweet.homeTimeline({ (tweets: [Tweet]) in
             self.tweets = tweets
-            self.tableView.reloadData()
+            self.tableView?.reloadData()
             refreshControl.endRefreshing()
             MBProgressHUD.hideHUDForView(self.view, animated: true)
         })

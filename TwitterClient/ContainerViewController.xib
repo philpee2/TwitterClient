@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ContainerViewController" customModule="TwitterClient" customModuleProvider="target">
+            <connections>
+                <outlet property="contentView" destination="xLf-3M-ucH" id="gyb-eL-GEs"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5wC-YU-IgC">
+                    <rect key="frame" x="19" y="40" width="178" height="30"/>
+                    <state key="normal" title="Home"/>
+                    <connections>
+                        <action selector="onHome:" destination="-1" eventType="touchUpInside" id="RMc-2L-wpp"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g1F-ee-y0k">
+                    <rect key="frame" x="19" y="78" width="178" height="30"/>
+                    <state key="normal" title="Profile"/>
+                    <connections>
+                        <action selector="onProfile:" destination="-1" eventType="touchUpInside" id="nfj-i6-GPu"/>
+                    </connections>
+                </button>
+                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xLf-3M-ucH">
+                    <rect key="frame" x="215" y="0.0" width="385" height="600"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <gestureRecognizers/>
+                    <connections>
+                        <outletCollection property="gestureRecognizers" destination="RV9-Ec-O2P" appends="YES" id="v8b-bf-kqz"/>
+                    </connections>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="0.80403986692844676" green="0.80403986692844676" blue="0.80403986692844676" alpha="1" colorSpace="calibratedRGB"/>
+        </view>
+        <screenEdgePanGestureRecognizer minimumNumberOfTouches="1" id="RV9-Ec-O2P">
+            <connections>
+                <action selector="onScreenEdgePan:" destination="-1" id="15s-Ro-cUj"/>
+            </connections>
+        </screenEdgePanGestureRecognizer>
+    </objects>
+</document>

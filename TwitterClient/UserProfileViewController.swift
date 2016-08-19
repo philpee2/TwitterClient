@@ -19,7 +19,7 @@ class UserProfileViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         userProfileHeaderView.user = user
-        self.title = user.name
+        self.title = user == User.currentUser ? "Me" : user.name
         tweetsLabel.text = "\(user.tweetsCount)"
         followersLabel.text = "\(user.followersCount)"
         followingLabel.text = "\(user.followingsCount)"

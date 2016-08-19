@@ -9,7 +9,8 @@
 import UIKit
 
 class Tweet: NSObject {
-
+    
+    var id: Int?
     var text: String!
     var timestamp: NSDate!
     var retweetCount: Int = 0
@@ -35,6 +36,10 @@ class Tweet: NSObject {
         let formatter = NSDateFormatter()
         formatter.dateFormat = "EEE MMM d HH:mm:ss Z y"
         timestamp = formatter.dateFromString(timestampString)
+        
+        if let tweetId = dictionary["id"] as? Int {
+            id = tweetId
+        }
     }
     
     // Convenience constructor for when a tweet is composed by the current user
@@ -48,6 +53,14 @@ class Tweet: NSObject {
     
     func save() {
         TwitterClient.sharedInstance.postTweet(self)
+    }
+    
+    func retweet() {
+        TwitterClient.sharedInstance.retweetTweet(self)
+    }
+    
+    func favorite() {
+        TwitterClient.sharedInstance.favoriteTweet(self)
     }
 
     class func tweetsWithArray(dictionaries: [NSDictionary]) -> [Tweet] {

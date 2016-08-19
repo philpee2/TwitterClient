@@ -20,24 +20,15 @@ class UserProfileHeaderView: UIView {
         didSet {
             if let backgroundImageUrl = user.backgroundImageUrl {
                 backgroundImage.setImageWithURL(backgroundImageUrl)
+                // White text is usually more visible on a background image
+                nameLabel.textColor = UIColor.whiteColor()
+                screenNameLabel.textColor = UIColor.whiteColor()
             }
             profileImage.setImageWithURL(user.profileImageUrl)
             nameLabel.text = user.name
-            screenNameLabel.text = user.screenName
+            screenNameLabel.text = "@\(user.screenName)"
         }
     }
-
-//    var name: String? {
-//        get { return nameLabel.text }
-//        set { nameLabel.text = newValue }
-//    }
-//
-//    var screenName: String? {
-//        get { return screenNameLabel.text }
-//        set { screenNameLabel.text = newValue }
-//    }
-
-
 
     /*
     // Only override drawRect: if you perform custom drawing.

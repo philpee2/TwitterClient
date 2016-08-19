@@ -20,10 +20,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let sideMenuViewController = storyboard.instantiateViewControllerWithIdentifier("SideMenuViewController") as! SideMenuViewController
-        let sideMenuOptionsController = storyboard.instantiateViewControllerWithIdentifier("SideMenuOptionsViewController") as! SideMenuOptionsViewController
+        let sideMenuOptionsViewController = storyboard.instantiateViewControllerWithIdentifier("SideMenuOptionsViewController") as! SideMenuOptionsViewController
         
-        sideMenuOptionsController.sideMenuViewController = sideMenuViewController
-        sideMenuViewController.optionsViewController = sideMenuOptionsController
+        sideMenuOptionsViewController.sideMenuViewController = sideMenuViewController
+        sideMenuViewController.optionsViewController = sideMenuOptionsViewController
         
         if User.currentUser != nil {
             window?.rootViewController = sideMenuViewController

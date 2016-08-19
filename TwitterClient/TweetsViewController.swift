@@ -91,6 +91,16 @@ class TweetsViewController: UIViewController, UITableViewDataSource, UITableView
             let cell = sender?.view.superview!.superview as! UITableViewCell
             let indexPath = tableView.indexPathForCell(cell)!
             userProfileViewController.user = tweets[indexPath.row].author
+        case "ReplySegue":
+            let cell = sender?.superview!!.superview as! UITableViewCell
+//            let cell = sender as! UITableViewCell
+            let indexPath = tableView.indexPathForCell(cell)!
+            let tweet = tweets[indexPath.row]
+            
+            let navigationController = segue.destinationViewController as! UINavigationController
+            let composeViewController = navigationController.topViewController as! ComposeViewController
+            composeViewController.starterText = "@\(tweet.author.screenName) "
+            composeViewController.delegate = self
         default:
             return
         }

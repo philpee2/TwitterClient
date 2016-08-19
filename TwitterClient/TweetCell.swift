@@ -36,4 +36,10 @@ class TweetCell: UITableViewCell {
         // Configure the view for the selected state
     }
 
+    @IBAction func onRetweetPress(sender: AnyObject) {
+        tweet.retweet()
+    }
+    @IBAction func onFavoritePress(sender: AnyObject) {
+        tweet.favorite()
+    }
 }

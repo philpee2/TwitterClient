@@ -65,5 +65,11 @@ class TweetDetailsViewController: UIViewController, ComposeViewControllerDelegat
             return
         }
     }
+    @IBAction func onRetweetPress(sender: AnyObject) {
+        tweet.retweet()
+    }
+    @IBAction func onFavoritePress(sender: AnyObject) {
+        tweet.favorite()
+    }
 
 }

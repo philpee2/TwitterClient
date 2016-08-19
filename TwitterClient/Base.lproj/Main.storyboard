@@ -39,6 +39,98 @@
             </objects>
             <point key="canvasLocation" x="-350" y="349"/>
         </scene>
+        <!--Side Menu Options View Controller-->
+        <scene sceneID="ik0-wi-n4i">
+            <objects>
+                <viewController storyboardIdentifier="SideMenuOptionsViewController" id="chI-Fj-vHR" customClass="SideMenuOptionsViewController" customModule="TwitterClient" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="fcV-4e-KZb"/>
+                        <viewControllerLayoutGuide type="bottom" id="CD2-dA-Oiw"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ZLC-uy-bTh">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A1I-VT-fCb">
+                                <rect key="frame" x="20" y="40" width="44" height="30"/>
+                                <state key="normal" title="Profile"/>
+                                <connections>
+                                    <action selector="onProfile:" destination="chI-Fj-vHR" eventType="touchUpInside" id="zZ0-Ff-qtf"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7kg-BP-BFm">
+                                <rect key="frame" x="20" y="78" width="41" height="30"/>
+                                <state key="normal" title="Home"/>
+                                <connections>
+                                    <action selector="onHome:" destination="chI-Fj-vHR" eventType="touchUpInside" id="Zdv-iH-6Df"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="A1I-VT-fCb" firstAttribute="leading" secondItem="ZLC-uy-bTh" secondAttribute="leading" constant="20" id="4Du-eu-GqX"/>
+                            <constraint firstItem="7kg-BP-BFm" firstAttribute="leading" secondItem="A1I-VT-fCb" secondAttribute="leading" id="MRN-h4-iiM"/>
+                            <constraint firstItem="A1I-VT-fCb" firstAttribute="top" secondItem="fcV-4e-KZb" secondAttribute="bottom" constant="20" id="NYC-pf-hld"/>
+                            <constraint firstItem="7kg-BP-BFm" firstAttribute="top" secondItem="A1I-VT-fCb" secondAttribute="bottom" constant="8" id="Vwe-aU-WJW"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tJR-sL-ue5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-442" y="-339"/>
+        </scene>
+        <!--Side Menu View Controller-->
+        <scene sceneID="QQ1-PF-W3p">
+            <objects>
+                <viewController storyboardIdentifier="SideMenuViewController" id="fZ0-9S-7Z5" customClass="SideMenuViewController" customModule="TwitterClient" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="T18-BU-9r5"/>
+                        <viewControllerLayoutGuide type="bottom" id="H8P-rj-cV5"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Trj-On-UI4">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NAm-8u-N9h">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XzT-nW-CB1">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="J0F-Xh-s8r" appends="YES" id="OEL-yD-iaA"/>
+                                </connections>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="XzT-nW-CB1" firstAttribute="width" secondItem="Trj-On-UI4" secondAttribute="width" id="0fE-Ae-wDT"/>
+                            <constraint firstItem="NAm-8u-N9h" firstAttribute="leading" secondItem="Trj-On-UI4" secondAttribute="leading" id="1nG-3c-zJm"/>
+                            <constraint firstAttribute="bottom" secondItem="XzT-nW-CB1" secondAttribute="bottom" id="Ma6-Fu-gYv"/>
+                            <constraint firstItem="H8P-rj-cV5" firstAttribute="top" secondItem="NAm-8u-N9h" secondAttribute="bottom" id="PBC-51-yku"/>
+                            <constraint firstItem="NAm-8u-N9h" firstAttribute="top" secondItem="Trj-On-UI4" secondAttribute="top" id="PbN-Fv-BXz"/>
+                            <constraint firstItem="XzT-nW-CB1" firstAttribute="leading" secondItem="Trj-On-UI4" secondAttribute="leading" id="YrD-GB-SWw"/>
+                            <constraint firstItem="XzT-nW-CB1" firstAttribute="top" secondItem="Trj-On-UI4" secondAttribute="top" id="aUw-UN-Oqr"/>
+                            <constraint firstAttribute="trailing" secondItem="NAm-8u-N9h" secondAttribute="trailing" id="m0W-fE-V3p"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="contentView" destination="XzT-nW-CB1" id="Lfo-hz-Qwf"/>
+                        <outlet property="contentViewConstraint" destination="YrD-GB-SWw" id="Cwl-Fd-cZl"/>
+                        <outlet property="menuView" destination="NAm-8u-N9h" id="7RR-6h-LBB"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Xja-GY-wmm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="J0F-Xh-s8r">
+                    <connections>
+                        <action selector="onPanGesture:" destination="fZ0-9S-7Z5" id="xfz-1q-sQ2"/>
+                    </connections>
+                </panGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="-105" y="-400"/>
+        </scene>
         <!--Home-->
         <scene sceneID="VDc-na-7en">
             <objects>
@@ -367,7 +459,7 @@
         <!--Navigation Controller-->
         <scene sceneID="YO0-Qj-lgS">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="dwk-yn-kgX" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="UserProfileNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="dwk-yn-kgX" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="UFn-1t-ycW"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="efc-AC-IBn">
@@ -386,6 +478,6 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="rfe-cd-hKy"/>
-        <segue reference="KGt-bQ-TDF"/>
+        <segue reference="Gwr-kt-qSL"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -20,8 +20,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         if User.currentUser != nil {
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let viewController = storyboard.instantiateViewControllerWithIdentifier("TweetsNavigationController")
-            window?.rootViewController = viewController
+            let sideMenuViewController = storyboard.instantiateViewControllerWithIdentifier("SideMenuViewController") as! SideMenuViewController
+            window?.rootViewController = sideMenuViewController
+            
+            let sideMenuOptionsController = storyboard.instantiateViewControllerWithIdentifier("SideMenuOptionsViewController") as! SideMenuOptionsViewController
+            
+            sideMenuOptionsController.sideMenuViewController = sideMenuViewController
+            sideMenuViewController.optionsViewController = sideMenuOptionsController
         }
         
         NSNotificationCenter.defaultCenter().addObserverForName(

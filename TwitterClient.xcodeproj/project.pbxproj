@@ -13,6 +13,8 @@
 		048421D61D657A130096BB0B /* UserProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048421D51D657A130096BB0B /* UserProfileViewController.swift */; };
 		048421DA1D66381C0096BB0B /* UserProfileHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 048421D91D66381C0096BB0B /* UserProfileHeaderView.xib */; };
 		048421DC1D6638340096BB0B /* UserProfileHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048421DB1D6638340096BB0B /* UserProfileHeaderView.swift */; };
+		048421E41D6691680096BB0B /* SideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048421E31D6691680096BB0B /* SideMenuViewController.swift */; };
+		048421E61D669B790096BB0B /* SideMenuOptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048421E51D669B790096BB0B /* SideMenuOptionsViewController.swift */; };
 		0489B0531D63F56A000F59AF /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0489B0521D63F56A000F59AF /* LoginViewController.swift */; };
 		0489B0571D64089F000F59AF /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0489B0561D64089F000F59AF /* User.swift */; };
 		0489B0591D6408AB000F59AF /* Tweet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0489B0581D6408AB000F59AF /* Tweet.swift */; };
@@ -33,6 +35,8 @@
 		048421D51D657A130096BB0B /* UserProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserProfileViewController.swift; sourceTree = "<group>"; };
 		048421D91D66381C0096BB0B /* UserProfileHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserProfileHeaderView.xib; sourceTree = "<group>"; };
 		048421DB1D6638340096BB0B /* UserProfileHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserProfileHeaderView.swift; sourceTree = "<group>"; };
+		048421E31D6691680096BB0B /* SideMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideMenuViewController.swift; sourceTree = "<group>"; };
+		048421E51D669B790096BB0B /* SideMenuOptionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideMenuOptionsViewController.swift; sourceTree = "<group>"; };
 		0489B0521D63F56A000F59AF /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		0489B0561D64089F000F59AF /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		0489B0581D6408AB000F59AF /* Tweet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tweet.swift; sourceTree = "<group>"; };
@@ -70,6 +74,8 @@
 				048421CF1D65612C0096BB0B /* ComposeViewController.swift */,
 				048421D11D656E020096BB0B /* TweetDetailsViewController.swift */,
 				048421D51D657A130096BB0B /* UserProfileViewController.swift */,
+				048421E31D6691680096BB0B /* SideMenuViewController.swift */,
+				048421E51D669B790096BB0B /* SideMenuOptionsViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -279,6 +285,7 @@
 				048421D01D65612C0096BB0B /* ComposeViewController.swift in Sources */,
 				0489B0571D64089F000F59AF /* User.swift in Sources */,
 				048421DC1D6638340096BB0B /* UserProfileHeaderView.swift in Sources */,
+				048421E41D6691680096BB0B /* SideMenuViewController.swift in Sources */,
 				048421D21D656E020096BB0B /* TweetDetailsViewController.swift in Sources */,
 				0489B0591D6408AB000F59AF /* Tweet.swift in Sources */,
 				0489B0531D63F56A000F59AF /* LoginViewController.swift in Sources */,
@@ -286,6 +293,7 @@
 				04A6AF881D63F4770048DC47 /* ViewController.swift in Sources */,
 				0489B05E1D641D32000F59AF /* TweetsViewController.swift in Sources */,
 				0489B05C1D64133E000F59AF /* TwitterClient.swift in Sources */,
+				048421E61D669B790096BB0B /* SideMenuOptionsViewController.swift in Sources */,
 				048421D61D657A130096BB0B /* UserProfileViewController.swift in Sources */,
 				04A6AF861D63F4770048DC47 /* AppDelegate.swift in Sources */,
 			);

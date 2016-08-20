@@ -13,6 +13,7 @@ class SideMenuOptionsViewController: UIViewController {
     var sideMenuViewController: SideMenuViewController!
     var profileViewController: UINavigationController!
     var homeViewController: UINavigationController!
+    var mentionsViewController: UINavigationController!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,6 +21,8 @@ class SideMenuOptionsViewController: UIViewController {
         profileViewController = storyboard.instantiateViewControllerWithIdentifier("UserProfileNavigationController") as! UINavigationController
         (profileViewController.topViewController as! UserProfileViewController).user = User.currentUser
         homeViewController = storyboard.instantiateViewControllerWithIdentifier("TweetsNavigationController") as! UINavigationController
+        mentionsViewController = storyboard.instantiateViewControllerWithIdentifier("MentionsNavigationController") as! UINavigationController
+        (mentionsViewController.topViewController as! MentionsViewController).user = User.currentUser
         
         sideMenuViewController.contentViewController = homeViewController
 
@@ -38,6 +41,12 @@ class SideMenuOptionsViewController: UIViewController {
     @IBAction func onHome(sender: AnyObject) {
         sideMenuViewController.contentViewController = homeViewController
     }
+    
+    @IBAction func onMentions(sender: AnyObject) {
+        sideMenuViewController.contentViewController = mentionsViewController
+    }
+    
+    
     /*
     // MARK: - Navigation
 

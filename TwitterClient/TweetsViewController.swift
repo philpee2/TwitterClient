@@ -51,6 +51,10 @@ class TweetsViewController: UIViewController, UITableViewDataSource, UITableView
         let cell = tableView.dequeueReusableCellWithIdentifier("TweetCell") as! TweetCell
         cell.tweet = tweets[indexPath.row]
         cell.accessoryType = .None
+        cell.onReply = {(tweet: Tweet) -> Void in
+            self.performSegueWithIdentifier("ReplySegue", sender: tweet)
+
+        }
         return cell
     }
 
@@ -92,11 +96,11 @@ class TweetsViewController: UIViewController, UITableViewDataSource, UITableView
             let indexPath = tableView.indexPathForCell(cell)!
             userProfileViewController.user = tweets[indexPath.row].author
         case "ReplySegue":
-            let cell = sender?.superview!!.superview as! UITableViewCell
-//            let cell = sender as! UITableViewCell
-            let indexPath = tableView.indexPathForCell(cell)!
-            let tweet = tweets[indexPath.row]
-
+//            let cell = sender?.superview!!.superview as! UITableViewCell
+////            let cell = sender as! UITableViewCell
+//            let indexPath = tableView.indexPathForCell(cell)!
+//            let tweet = tweets[indexPath.row]
+            let tweet = sender as! Tweet
             let navigationController = segue.destinationViewController as! UINavigationController
             let composeViewController = navigationController.topViewController as! ComposeViewController
             composeViewController.starterText = "@\(tweet.author.screenName) "

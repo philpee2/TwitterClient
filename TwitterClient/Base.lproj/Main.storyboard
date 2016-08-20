@@ -31,9 +31,6 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <connections>
-                        <segue destination="fZ0-9S-7Z5" kind="modal" identifier="loginSegue" id="FNZ-0r-vtp"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -337,7 +334,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YPt-Q9-Oce" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1480" y="1102"/>
+            <point key="canvasLocation" x="1364" y="1250"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="VvB-3s-w71">
@@ -372,7 +369,7 @@
                         <viewControllerLayoutGuide type="bottom" id="Fqf-bj-4Xf"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="FGL-qK-XEx">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="U6e-p5-GEs" customClass="UserProfileHeaderView" customModule="TwitterClient" customModuleProvider="target">
@@ -605,7 +602,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="moU-qW-yke" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1104" y="1102"/>
+            <point key="canvasLocation" x="958" y="1250"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="YO0-Qj-lgS">
@@ -637,7 +634,7 @@
         <image name="retweet" width="75" height="72"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="p35-Gr-rQG"/>
-        <segue reference="CLl-Fj-lpo"/>
+        <segue reference="rfe-cd-hKy"/>
+        <segue reference="Gwr-kt-qSL"/>
     </inferredMetricsTieBreakers>
 </document>

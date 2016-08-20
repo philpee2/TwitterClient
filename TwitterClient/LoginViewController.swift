@@ -33,13 +33,12 @@ class LoginViewController: UIViewController {
     }
     */
     @IBAction func onLoginButton(sender: AnyObject) {
-        TwitterClient.sharedInstance.login(
-            {() -> Void in
-                self.performSegueWithIdentifier("loginSegue", sender: nil)
-            },
-            failure: { (error) -> Void in
-                print(error.localizedDescription)
-            }
-        )
+        TwitterClient.sharedInstance.login({() -> Void in
+            let delegate = UIApplication.sharedApplication().delegate as! AppDelegate
+            delegate.configureSideMenus()
+        },
+        failure: { (error) -> Void in
+            print(error.localizedDescription)
+        })
     }
 }

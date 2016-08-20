@@ -13,11 +13,8 @@ import BDBOAuth1Manager
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
-
-    func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        // Override point for customization after application launch.
-        
+    
+    func configureSideMenus() {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let sideMenuViewController = storyboard.instantiateViewControllerWithIdentifier("SideMenuViewController") as! SideMenuViewController
         let sideMenuOptionsViewController = storyboard.instantiateViewControllerWithIdentifier("SideMenuOptionsViewController") as! SideMenuOptionsViewController
@@ -39,6 +36,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 self.window?.rootViewController = viewController
             }
         )
+    }
+
+
+    func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+        // Override point for customization after application launch.
+        
+        configureSideMenus()
         return true
     }
 

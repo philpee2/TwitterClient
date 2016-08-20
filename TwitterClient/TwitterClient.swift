@@ -9,6 +9,11 @@
 import UIKit
 import BDBOAuth1Manager
 
+enum TwitterStatusEndpoint: String {
+    case Home = "home_timeline"
+    case Mentions = "mentions_timeline"
+}
+
 class TwitterClient: BDBOAuth1SessionManager {
 
     static let baseUrl = "https://api.twitter.com"
@@ -23,10 +28,11 @@ class TwitterClient: BDBOAuth1SessionManager {
 
     var loginSucces: (() -> Void)?
     var loginFailure: ((NSError) -> Void)?
-
-    func homeTimeline(success: ([Tweet]) -> Void, failure: ((NSError) -> Void)? = nil) {
+    
+    func getTimeline(endpoint: TwitterStatusEndpoint, success: ([Tweet]) -> Void, failure: ((NSError) -> Void)? = nil) {
+        let url = "1.1/statuses/\(endpoint.rawValue).json"
         GET(
-            "1.1/statuses/home_timeline.json",
+            url,
             parameters: nil,
             progress: nil,
             success: { (task: NSURLSessionDataTask, response: AnyObject?) -> Void in
@@ -39,6 +45,22 @@ class TwitterClient: BDBOAuth1SessionManager {
             }
         )
     }
+
+//    func homeTimeline(success: ([Tweet]) -> Void, failure: ((NSError) -> Void)? = nil) {
+//        GET(
+//            "1.1/statuses/home_timeline.json",
+//            parameters: nil,
+//            progress: nil,
+//            success: { (task: NSURLSessionDataTask, response: AnyObject?) -> Void in
+//                let tweets = Tweet.tweetsWithArray(response as! [NSDictionary])
+//                success(tweets)
+//            },
+//            failure: { (task: NSURLSessionDataTask?, error: NSError) -> Void in
+//                print(error.localizedDescription)
+//                failure?(error)
+//            }
+//        )
+//    }
 
     func currentAccount(success: User -> Void, failure: ((NSError) -> Void)? = nil) {
         GET(

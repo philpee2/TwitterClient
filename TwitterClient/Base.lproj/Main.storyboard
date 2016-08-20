@@ -607,37 +607,6 @@
             </objects>
             <point key="canvasLocation" x="1104" y="1102"/>
         </scene>
-        <!--Mentions-->
-        <scene sceneID="PeD-Qc-153">
-            <objects>
-                <viewController storyboardIdentifier="MentionsViewController" id="0a1-cZ-fOd" customClass="MentionsViewController" customModule="TwitterClient" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="4Fw-Ed-gMZ"/>
-                        <viewControllerLayoutGuide type="bottom" id="wF4-sW-Fc6"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="IKB-t2-cZ9">
-                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="rs7-3l-pmi">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </tableView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstAttribute="trailing" secondItem="rs7-3l-pmi" secondAttribute="trailing" id="7NH-va-4Hb"/>
-                            <constraint firstAttribute="bottom" secondItem="rs7-3l-pmi" secondAttribute="bottom" id="A8X-8P-5Zy"/>
-                            <constraint firstItem="rs7-3l-pmi" firstAttribute="leading" secondItem="IKB-t2-cZ9" secondAttribute="leading" id="hrz-uX-l5h"/>
-                            <constraint firstItem="rs7-3l-pmi" firstAttribute="top" secondItem="IKB-t2-cZ9" secondAttribute="top" id="nT1-PV-Bbi"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" title="Mentions" id="Khr-5y-8xU"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="6R5-vS-333" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1275" y="-1179"/>
-        </scene>
         <!--Navigation Controller-->
         <scene sceneID="YO0-Qj-lgS">
             <objects>
@@ -660,28 +629,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hb1-BS-J8Y" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="858" y="-495"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="hMq-Jt-NBe">
-            <objects>
-                <navigationController storyboardIdentifier="MentionsNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="BU7-Yb-04u" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="Gdt-bc-TRs">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" red="0.0" green="0.67450980390000004" blue="0.92941176469999998" alpha="1" colorSpace="calibratedRGB"/>
-                        <textAttributes key="titleTextAttributes">
-                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        </textAttributes>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="0a1-cZ-fOd" kind="relationship" relationship="rootViewController" id="g54-kT-0C4"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="fR4-lh-b2g" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="853" y="-1179"/>
         </scene>
     </scenes>
     <resources>

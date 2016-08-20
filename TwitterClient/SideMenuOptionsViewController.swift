@@ -21,8 +21,12 @@ class SideMenuOptionsViewController: UIViewController {
         profileViewController = storyboard.instantiateViewControllerWithIdentifier("UserProfileNavigationController") as! UINavigationController
         (profileViewController.topViewController as! UserProfileViewController).user = User.currentUser
         homeViewController = storyboard.instantiateViewControllerWithIdentifier("TweetsNavigationController") as! UINavigationController
-        mentionsViewController = storyboard.instantiateViewControllerWithIdentifier("MentionsNavigationController") as! UINavigationController
-        (mentionsViewController.topViewController as! MentionsViewController).user = User.currentUser
+        mentionsViewController = storyboard.instantiateViewControllerWithIdentifier("TweetsNavigationController") as! UINavigationController
+        
+        mentionsViewController.topViewController?.navigationItem.title = "Mentions"
+        
+        (homeViewController.topViewController as! TweetsViewController).endpoint = .Home
+        (mentionsViewController.topViewController as! TweetsViewController).endpoint = .Mentions
         
         sideMenuViewController.contentViewController = homeViewController
 

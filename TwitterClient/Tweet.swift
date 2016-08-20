@@ -67,8 +67,8 @@ class Tweet: NSObject {
         return dictionaries.map { Tweet(dictionary: $0) }
     }
 
-    class func homeTimeline(success: ([Tweet]) -> Void, failure: ((NSError) -> Void)? = nil) {
-        TwitterClient.sharedInstance.homeTimeline(success, failure: failure)
+    class func getTimeline(endpoint: TwitterStatusEndpoint, success: ([Tweet]) -> Void, failure: ((NSError) -> Void)? = nil) {
+        TwitterClient.sharedInstance.getTimeline(endpoint, success: success, failure: failure)
     }
 }
 

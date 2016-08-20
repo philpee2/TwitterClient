@@ -13,6 +13,7 @@ class TweetsViewController: UIViewController, UITableViewDataSource, UITableView
 
     @IBOutlet weak var tableView: UITableView!
     var tweets: [Tweet]!
+    var endpoint: TwitterStatusEndpoint!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,7 +33,7 @@ class TweetsViewController: UIViewController, UITableViewDataSource, UITableView
 
     @objc private func fetchData(refreshControl: UIRefreshControl) {
         MBProgressHUD.showHUDAddedTo(self.view, animated: true)
-        Tweet.homeTimeline({ (tweets: [Tweet]) in
+        Tweet.getTimeline(endpoint, success: { (tweets: [Tweet]) in
             self.tweets = tweets
             self.tableView.reloadData()
             refreshControl.endRefreshing()
@@ -95,7 +96,7 @@ class TweetsViewController: UIViewController, UITableViewDataSource, UITableView
 //            let cell = sender as! UITableViewCell
             let indexPath = tableView.indexPathForCell(cell)!
             let tweet = tweets[indexPath.row]
-            
+
             let navigationController = segue.destinationViewController as! UINavigationController
             let composeViewController = navigationController.topViewController as! ComposeViewController
             composeViewController.starterText = "@\(tweet.author.screenName) "

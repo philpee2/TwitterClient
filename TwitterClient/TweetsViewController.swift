@@ -55,6 +55,9 @@ class TweetsViewController: UIViewController, UITableViewDataSource, UITableView
             self.performSegueWithIdentifier("ReplySegue", sender: tweet)
 
         }
+        cell.onProfile = {(user: User) -> Void in
+            self.performSegueWithIdentifier("UserProfileSegue", sender: user)
+        }
         return cell
     }
 
@@ -91,15 +94,9 @@ class TweetsViewController: UIViewController, UITableViewDataSource, UITableView
             tweetDetailsViewController.tweet = tweets[indexPath.row]
         case "UserProfileSegue":
             let userProfileViewController = segue.destinationViewController as! UserProfileViewController
-            // This is pretty gross
-            let cell = sender?.view.superview!.superview as! UITableViewCell
-            let indexPath = tableView.indexPathForCell(cell)!
-            userProfileViewController.user = tweets[indexPath.row].author
+            let user = sender as! User
+            userProfileViewController.user = user
         case "ReplySegue":
-//            let cell = sender?.superview!!.superview as! UITableViewCell
-////            let cell = sender as! UITableViewCell
-//            let indexPath = tableView.indexPathForCell(cell)!
-//            let tweet = tweets[indexPath.row]
             let tweet = sender as! Tweet
             let navigationController = segue.destinationViewController as! UINavigationController
             let composeViewController = navigationController.topViewController as! ComposeViewController

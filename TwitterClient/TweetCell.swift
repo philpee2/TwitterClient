@@ -20,6 +20,7 @@ class TweetCell: UITableViewCell {
     @IBOutlet weak var favoriteIcon: UIImageView!
     
     var onReply: ((Tweet) -> Void)!
+    var onProfile: ((User) -> Void)!
     
     var tweet: Tweet! {
         didSet {
@@ -45,6 +46,10 @@ class TweetCell: UITableViewCell {
         let replyTap = UITapGestureRecognizer(target: self, action: #selector(TweetCell.onReplyTap))
         replyTap.delegate = self
         replyIcon.addGestureRecognizer(replyTap)
+        
+        let profilePicTap =  UITapGestureRecognizer(target: self, action: #selector(TweetCell.onProfilePicTap))
+        profilePicTap.delegate = self
+        profileImageView.addGestureRecognizer(profilePicTap)
     }
     
     @objc private func onRetweetTap() {
@@ -58,17 +63,14 @@ class TweetCell: UITableViewCell {
     @objc private func onReplyTap() {
         onReply(tweet)
     }
+    
+    @objc private func onProfilePicTap() {
+        onProfile(tweet.author)
+    }
 
     override func setSelected(selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
     }
-
-//    @IBAction func onRetweetPress(sender: AnyObject) {
-//        tweet.retweet()
-//    }
-//    @IBAction func onFavoritePress(sender: AnyObject) {
-//        tweet.favorite()
-//    }
 }
